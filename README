@@ -1,0 +1,26 @@
+TWRP 2.8.x.x for JSR D10F (HighScreen Boost 2 SE)
+
+Based on kernel from HS Boost 2 SE ROM v2.8
+
+Install:
+fastboot flash recovery twrp.img
+
+Devtree fixes:
+1) add reserved memory area at 0x7f200000 size 0x100000
+
+Cmdline = console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 lpj=192000 debug ignore_loglevel pmemlog=9 panic_restart=2 log_no_ring=1 stopnum=88000
+
+Default.prop:
+ro.secure=0
+ro.allow.mock.location=1
+ro.debuggable=1
+persist.sys.usb.config=mass_storage,adb
+persist.service.adb.enable=1
+ro.adb.secure=0
+
+Added viewmem utility to /sbin
+Usage:
+viewmem 0x7f200000 0x100000 >/data/kmsg.txt
+
+
+
