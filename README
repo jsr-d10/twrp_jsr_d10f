@@ -13,7 +13,8 @@ Cmdline =  console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0
 
 Added viewmem utility to /sbin
 Usage:
-viewmem 0x7f200000 0x100000 >/data/kmsg.txt
+$ su
+$ viewmem 0x7f200000 0x100000 >/data/kmsg.txt
 
 
 
